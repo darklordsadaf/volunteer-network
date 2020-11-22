@@ -25,7 +25,6 @@ const Details = () => {
                 fetch('https://shielded-caverns-57688.herokuapp.com/viewTask?email=' + loggedInUser.email)
                     .then(res => res.json())
                     .then(data => setBookings(data));
-                // event.target.parentNode.style.display = 'none';
             })
     }
     return (

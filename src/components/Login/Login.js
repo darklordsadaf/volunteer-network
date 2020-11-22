@@ -23,9 +23,7 @@ const Login = () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function (result) {
 
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            // var token = result.credential.accessToken;
-            // The signed-in user info.
+
             const { displayName, email } = result.user;
             const newUser = {
                 isSignedIn: true,
@@ -35,14 +33,10 @@ const Login = () => {
 
             setLoggedInUser(newUser);
             history.replace(from);
-            // ...
+
         }).catch(function (error) {
             console.log(error)
-            // const newUser = { ...loggedInUser };
-            // newUser.error = error.message;
-            // newUser.success = false;
-            // setLoggedInUser(newUser);
-            // ...
+
         });
 
 
