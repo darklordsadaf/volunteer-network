@@ -139,10 +139,10 @@ const Header = () => {
                     <div className={classes.grow} />
                     <div style={{ marginRight: '200px' }} className={classes.sectionDesktop}>
                         <Link style={{ textDecoration: 'none', margin: '20px 10px 0px 10px', color: 'black' }}>News</Link>
-                        <Link style={{ textDecoration: 'none', margin: '20px 10px 0px 10px', color: 'black' }}>Destination</Link>
+                        <Link to='/details' style={{ textDecoration: 'none', margin: '20px 10px 0px 10px', color: 'black' }}>Destination</Link>
                         <Link style={{ textDecoration: 'none', margin: '20px 10px 0px 10px', color: 'black' }}>Blog</Link>
                         <Link style={{ textDecoration: 'none', margin: '20px 10px 0px 10px', color: 'black' }}>Contact</Link>
-                        {loggedInUser.isSignedIn ? <button onClick={() => setLoggedInUser({})} className="login">Sign Out</button> :
+                        {loggedInUser.isSignedIn ? <Link to='/' onClick={() => setLoggedInUser({})} className="login">Sign Out</Link> :
                             <Link to='/login' className="login">Sign In</Link>
                         }
 

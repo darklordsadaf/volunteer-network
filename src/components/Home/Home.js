@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FormControl, InputGroup } from 'react-bootstrap';
+import { UserContext } from '../../App';
 import fakeData from '../fakeData';
 import Header from '../Header/Header';
 import Task from '../Task/Task';
@@ -7,6 +8,13 @@ import Task from '../Task/Task';
 const Home = () => {
 
     const tasks = fakeData;
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const handleName = (name) => {
+        sessionStorage.setItem('token', name);
+        // loggedInUser.taskName = name;
+        // setLoggedInUser(loggedInUser);
+        // console.log(name)
+    }
     return (
         <div className="row">
             <Header></Header>
@@ -27,7 +35,7 @@ const Home = () => {
 
 
             {
-                tasks.map(task => <Task key={task.id} task={task}></Task>)
+                tasks.map(task => <Task key={task.id} handleName={handleName} task={task}></Task>)
             }
         </div >
     );

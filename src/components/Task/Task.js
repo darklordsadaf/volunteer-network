@@ -2,10 +2,12 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Task = ({ task }) => {
-    // console.log(task)
+const Task = (props) => {
+
+    const { task } = props;
+
     return (
-        <Link to="/register" className="col-md-3 " style={{ padding: "20px 50px 20px 50px" }}>
+        <Link onClick={() => props.handleName(task.name)} to="/register" className="col-md-3 " style={{ padding: "20px 50px 20px 50px" }}>
             <Card style={{ width: '18rem', }}>
                 <Card.Body style={{ backgroundColor: `${task.color}`, color: 'white', padding: '0px 0px 20px 0px', borderRadius: '10px' }}>
 
