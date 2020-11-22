@@ -13,7 +13,7 @@ const Register = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const onSubmit = (e) => {
 
-        fetch("http://localhost:5000/addTask", {
+        fetch("https://shielded-caverns-57688.herokuapp.com/addTask", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(e)

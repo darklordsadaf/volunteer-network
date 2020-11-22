@@ -9,7 +9,7 @@ const Details = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/viewTask?email=' + loggedInUser.email)
+        fetch('https://shielded-caverns-57688.herokuapp.com/viewTask?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setBookings(data));
     }, [])
@@ -17,12 +17,12 @@ const Details = () => {
 
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://shielded-caverns-57688.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(result => {
-                fetch('http://localhost:5000/viewTask?email=' + loggedInUser.email)
+                fetch('https://shielded-caverns-57688.herokuapp.com/viewTask?email=' + loggedInUser.email)
                     .then(res => res.json())
                     .then(data => setBookings(data));
                 // event.target.parentNode.style.display = 'none';
